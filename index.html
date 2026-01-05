@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Neon Battle - Local 2 Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- หน้าจอ Start -->
+    <div id="start-screen">
+        <h1>NEON BATTLE</h1>
+        <div class="controls-guide">
+            <div class="p1-info">
+                <h3 class="p1-color">PLAYER 1</h3>
+                <p>เดิน: <span class="key">A</span> <span class="key">D</span> | โดด: <span class="key">W</span></p>
+                <p>โจมตี (1s): <span class="key">E</span> | สกิล (30s): <span class="key">R</span></p>
+            </div>
+            <div class="p2-info">
+                <h3 class="p2-color">PLAYER 2</h3>
+                <p>เดิน: <span class="key">←</span> <span class="key">→</span> | โดด: <span class="key">↑</span></p>
+                <p>โจมตี (1s): <span class="key">L</span> | สกิล (30s): <span class="key">K</span></p>
+            </div>
+        </div>
+        <button class="start-btn" onclick="startGame()">START GAME</button>
+    </div>
+
+    <!-- โซนเกม -->
+    <div class="game-wrapper" id="game-wrapper">
+        <!-- UI ส่วนจบเกม -->
+        <div id="end-game-ui">
+            <div id="game-msg">PLAYER 1 WINS!</div>
+            <button id="replay-btn" class="start-btn" onclick="resetGame()">REPLAY</button>
+        </div>
+        
+        <div class="ui-overlay">
+            <div class="player-hp">
+                <span class="p1-color">P1 HP</span>
+                <div class="hp-box"><div id="p1-bar" class="hp-bar"></div></div>
+                <div class="cooldown-text" id="p1-skill-status">SKILL: READY</div>
+            </div>
+            <div class="player-hp" style="text-align: right;">
+                <span class="p2-color">P2 HP</span>
+                <div class="hp-box"><div id="p2-bar" class="hp-bar" style="float:right;"></div></div>
+                <div class="cooldown-text" id="p2-skill-status">SKILL: READY</div>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <canvas id="game" width="800" height="400"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
